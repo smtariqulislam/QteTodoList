@@ -1,0 +1,41 @@
+.add-task-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.add-task-container input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.filter-container {
+  margin-bottom: 20px;
+}
+
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.priority-indicator {
+  margin-left: auto;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+}
+
+.task-text {
+  cursor: pointer;
+  color: white;
+}
+
+.task-text:hover {
+  text-decoration: underline;
+}
