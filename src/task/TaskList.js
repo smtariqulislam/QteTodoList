@@ -9,13 +9,12 @@ const TaskList = () => {
     medium: "#ff9800",
     high: "#f44336",
   };
-  // Function to toggle the completion status of a task
-  const [tasks, setTasks] = useState([]); // State for storing tasks
-  const [taskInput, setTaskInput] = useState(""); // State for task input
-  const [priorityInput, setPriorityInput] = useState("low"); // State for priority input
-  const [filter, setFilter] = useState("all"); // State for filter
 
-  // Load tasks from local storage on component mount
+  const [tasks, setTasks] = useState([]);
+  const [taskInput, setTaskInput] = useState("");
+  const [priorityInput, setPriorityInput] = useState("low");
+  const [filter, setFilter] = useState("all");
+
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem("tasks"));
     if (savedTasks) {
@@ -23,15 +22,12 @@ const TaskList = () => {
     }
   }, []);
 
-  // Save tasks to local storage whenever tasks state changes
   useEffect(() => {
     if (tasks.length > 0) {
       localStorage.setItem("tasks", JSON.stringify(tasks));
-      //   console.log("helo");
     }
   }, [tasks]);
 
-  // Function to add a new task
   const handleAddTask = () => {
     if (taskInput.trim() !== "") {
       const newTask = {
@@ -46,7 +42,6 @@ const TaskList = () => {
     }
   };
 
-  // Function to edit an existing task
   const handleEditTask = (id, newText) => {
     setTasks(
       tasks.map((task) => {
@@ -58,12 +53,6 @@ const TaskList = () => {
     );
   };
 
-  // Function to delete a task
-  // const handleDeleteTask = (id) => {
-  //   setTasks(tasks.filter((task) => task.id !== id));
-  // };
-
-  // Function to delete a task
   const handleDeleteTask = (id) => {
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this task?"
@@ -73,7 +62,6 @@ const TaskList = () => {
     }
   };
 
-  // Function to toggle the completion status of a task
   const handleToggleTask = (id) => {
     setTasks(
       tasks.map((task) => {
@@ -85,7 +73,6 @@ const TaskList = () => {
     );
   };
 
-  // Filter tasks based on priority
   const filteredTasks = tasks.filter((task) => {
     if (filter === "all") {
       return true;

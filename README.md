@@ -1,6 +1,6 @@
 
 
-## overview
+# Provide an overview of the project.
 
 1. Install dependencies by running npm install.
 
@@ -12,4 +12,3 @@
 
 5. Your tasks will be automatically saved to local storage, so even if you refresh the page, you won't lose your task list.
 
-# QteTodoList
